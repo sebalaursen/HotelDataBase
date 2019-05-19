@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.98" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Accommodation" representedClassName="Accommodation" syncable="YES" codeGenerationType="class">
+        <attribute name="actualCheckOut" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="checkIn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="checkOut" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="guests" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="guest" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Guest" inverseName="accommodation" inverseEntity="Guest" syncable="YES"/>
+        <relationship name="payment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Payment" inverseName="accommodation" inverseEntity="Payment" syncable="YES"/>
+        <relationship name="reservation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reservation" inverseName="accommodation" inverseEntity="Reservation" syncable="YES"/>
+        <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="accommodation" inverseEntity="Room" syncable="YES"/>
+    </entity>
+    <entity name="Guest" representedClassName="Guest" syncable="YES" codeGenerationType="class">
+        <attribute name="birthDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNum" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="accommodation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Accommodation" inverseName="guest" inverseEntity="Accommodation" syncable="YES"/>
+        <relationship name="reservation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reservation" inverseName="guest" inverseEntity="Reservation" syncable="YES"/>
+    </entity>
+    <entity name="Payment" representedClassName="Payment" syncable="YES" codeGenerationType="class">
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sum" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="accommodation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Accommodation" inverseName="payment" inverseEntity="Accommodation" syncable="YES"/>
+        <relationship name="reservation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reservation" inverseName="payment" inverseEntity="Reservation" syncable="YES"/>
+    </entity>
+    <entity name="Reservation" representedClassName="Reservation" syncable="YES" codeGenerationType="class">
+        <attribute name="checkIn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="checkOut" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="guests" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="reservationDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="accommodation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Accommodation" inverseName="reservation" inverseEntity="Accommodation" syncable="YES"/>
+        <relationship name="guest" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Guest" inverseName="reservation" inverseEntity="Guest" syncable="YES"/>
+        <relationship name="payment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Payment" inverseName="reservation" inverseEntity="Payment" syncable="YES"/>
+        <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="reservation" inverseEntity="Room" syncable="YES"/>
+    </entity>
+    <entity name="Room" representedClassName="Room" syncable="YES" codeGenerationType="class">
+        <attribute name="roomNum" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="accommodation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Accommodation" inverseName="room" inverseEntity="Accommodation" syncable="YES"/>
+        <relationship name="reservation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reservation" inverseName="room" inverseEntity="Reservation" syncable="YES"/>
+        <relationship name="roomType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RoomType" inverseName="room" inverseEntity="RoomType" syncable="YES"/>
+    </entity>
+    <entity name="RoomType" representedClassName="RoomType" syncable="YES" codeGenerationType="class">
+        <attribute name="guestCapacity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="rooms" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="roomType" inverseEntity="Room" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Room" positionX="-75.0234375" positionY="29.69140625" width="128" height="103"/>
+        <element name="RoomType" positionX="183.1875" positionY="0.56640625" width="128" height="118"/>
+        <element name="Guest" positionX="182.328125" positionY="273.78125" width="128" height="163"/>
+        <element name="Accommodation" positionX="-535.875" positionY="227.65234375" width="128" height="163"/>
+        <element name="Payment" positionX="-13.47265625" positionY="578.57421875" width="128" height="103"/>
+        <element name="Reservation" positionX="-78.0546875" positionY="228.92578125" width="128" height="163"/>
+    </elements>
+</model>
