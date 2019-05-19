@@ -9,11 +9,14 @@
 import UIKit
 
 class ActiveRoomInfoViewController: UIViewController {
+    @IBOutlet weak var guestL: UILabel!
+    @IBOutlet weak var guestsL: UILabel!
+    @IBOutlet weak var checkInL: UILabel!
+    @IBOutlet weak var checkOutL: UILabel!
+    @IBOutlet weak var lCheckOutL: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func doneBtn(_ sender: Any) {

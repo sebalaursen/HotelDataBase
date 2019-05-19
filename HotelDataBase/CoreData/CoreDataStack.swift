@@ -13,6 +13,7 @@ import CoreData
 final class CoreDataStack {
     
     // MARK: - Core Data stack
+    //let coreData = CoreDataStack()
     
     lazy var persistentContainer: NSPersistentContainer = {
         
@@ -86,6 +87,10 @@ final class CoreDataStack {
 //            let nserror = error as NSError
 //            print("Context save error \(nserror), \(nserror.userInfo)")
 //        }
+//        let context = persistentContainer.viewContext
+//        let newNote = NSEntityDescription.insertNewObject(forEntityName: "RoomType", into: context)
+        //newNote.setValue(<#T##value: Any?##Any?#>, forKey: <#T##String#>)
+        
     }
     
     func delete () {

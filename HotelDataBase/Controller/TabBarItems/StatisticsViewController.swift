@@ -23,9 +23,7 @@ class StatisticsViewController: UIViewController {
         tableView.register(RoomTableViewCell.self, forCellReuseIdentifier: "CellID")
         tableView.dataSource = self
         tableView.delegate = self
-        //tableView.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 0, right: 0)
         
-        //constarints adding
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true

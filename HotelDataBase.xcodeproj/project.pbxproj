@@ -20,6 +20,10 @@
 		9E6561262290898D00BF14CB /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6561252290898D00BF14CB /* RoomTableViewCell.swift */; };
 		9E65612A22908BD500BF14CB /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E65612922908BD500BF14CB /* CoreDataStack.swift */; };
 		9E65612C2290931600BF14CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E65612B2290931500BF14CB /* Main.storyboard */; };
+		9E65612E2291629800BF14CB /* Rooms.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E65612D2291629800BF14CB /* Rooms.plist */; };
+		9E656130229162A700BF14CB /* RoomTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E65612F229162A700BF14CB /* RoomTypes.plist */; };
+		9E6561352291804B00BF14CB /* AccFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6561342291804B00BF14CB /* AccFiltersViewController.swift */; };
+		9E6561372291805C00BF14CB /* BookingFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6561362291805C00BF14CB /* BookingFiltersViewController.swift */; };
 		9E721A21223EE54400E4837B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E721A20223EE54400E4837B /* AppDelegate.swift */; };
 		9E721A29223EE54400E4837B /* HotelDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9E721A27223EE54400E4837B /* HotelDataBase.xcdatamodeld */; };
 		9E721A2B223EE54500E4837B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E721A2A223EE54500E4837B /* Assets.xcassets */; };
@@ -40,6 +44,10 @@
 		9E6561252290898D00BF14CB /* RoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; };
 		9E65612922908BD500BF14CB /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		9E65612B2290931500BF14CB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9E65612D2291629800BF14CB /* Rooms.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Rooms.plist; sourceTree = "<group>"; };
+		9E65612F229162A700BF14CB /* RoomTypes.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RoomTypes.plist; sourceTree = "<group>"; };
+		9E6561342291804B00BF14CB /* AccFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccFiltersViewController.swift; sourceTree = "<group>"; };
+		9E6561362291805C00BF14CB /* BookingFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingFiltersViewController.swift; sourceTree = "<group>"; };
 		9E721A1D223EE54400E4837B /* HotelDataBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelDataBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E721A20223EE54400E4837B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E721A28223EE54400E4837B /* HotelDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HotelDataBase.xcdatamodel; sourceTree = "<group>"; };
@@ -62,6 +70,7 @@
 		9E65610E229084C000BF14CB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9E65613122917FF300BF14CB /* Filters */,
 				9E656127229089F500BF14CB /* TabBarItems */,
 				9E656119229085AC00BF14CB /* RoomInfoABViewController.swift */,
 				9E65611B229085BD00BF14CB /* StatRoomInfoViewController.swift */,
@@ -103,8 +112,19 @@
 			isa = PBXGroup;
 			children = (
 				9E65612922908BD500BF14CB /* CoreDataStack.swift */,
+				9E65612D2291629800BF14CB /* Rooms.plist */,
+				9E65612F229162A700BF14CB /* RoomTypes.plist */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		9E65613122917FF300BF14CB /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				9E6561342291804B00BF14CB /* AccFiltersViewController.swift */,
+				9E6561362291805C00BF14CB /* BookingFiltersViewController.swift */,
+			);
+			path = Filters;
 			sourceTree = "<group>";
 		};
 		9E721A14223EE54400E4837B = {
@@ -200,8 +220,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E65612C2290931600BF14CB /* Main.storyboard in Resources */,
+				9E65612E2291629800BF14CB /* Rooms.plist in Resources */,
 				9E721A2E223EE54500E4837B /* LaunchScreen.storyboard in Resources */,
 				9E721A2B223EE54500E4837B /* Assets.xcassets in Resources */,
+				9E656130229162A700BF14CB /* RoomTypes.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,10 +235,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E721A29223EE54400E4837B /* HotelDataBase.xcdatamodeld in Sources */,
+				9E6561352291804B00BF14CB /* AccFiltersViewController.swift in Sources */,
 				9E6561262290898D00BF14CB /* RoomTableViewCell.swift in Sources */,
 				9E6561122290852A00BF14CB /* AccViewController.swift in Sources */,
 				9E65611E229085CB00BF14CB /* ActiveRoomInfoViewController.swift in Sources */,
 				9E6561242290872200BF14CB /* RegisterViewController.swift in Sources */,
+				9E6561372291805C00BF14CB /* BookingFiltersViewController.swift in Sources */,
 				9E6561142290854800BF14CB /* BookingViewController.swift in Sources */,
 				9E65611A229085AC00BF14CB /* RoomInfoABViewController.swift in Sources */,
 				9E65612A22908BD500BF14CB /* CoreDataStack.swift in Sources */,

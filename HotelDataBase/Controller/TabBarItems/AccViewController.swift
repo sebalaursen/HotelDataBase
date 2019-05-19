@@ -16,7 +16,6 @@ struct f {
 class AccViewController: UIViewController {
     var tableView = UITableView()
     
-    @IBOutlet weak var navBar: UINavigationBar!
     let list = [f(num: 1, type: "lix"), f(num: 2, type: "lux")]
     
     
@@ -31,9 +30,7 @@ class AccViewController: UIViewController {
         tableView.register(RoomTableViewCell.self, forCellReuseIdentifier: "CellID")
         tableView.dataSource = self
         tableView.delegate = self
-        //tableView.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 0, right: 0)
         
-        //constarints adding
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
@@ -47,6 +44,12 @@ class AccViewController: UIViewController {
         }
     }
 
+    @IBAction func filterBtn(_ sender: Any) {
+        let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopUpAccFilters") as! AccFiltersViewController
+        self.addChild(popUp)
+        popUp.view.frame = self.view.frame
+        self.view.addSubview(popUp.view)
+    }
 }
 
 extension AccViewController: UITableViewDelegate, UITableViewDataSource {

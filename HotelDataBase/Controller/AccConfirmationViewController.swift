@@ -9,25 +9,17 @@
 import UIKit
 
 class AccConfirmationViewController: UIViewController {
+    @IBOutlet weak var guestL: UILabel!
+    @IBOutlet weak var guestsL: UILabel!
+    @IBOutlet weak var checkInL: UILabel!
+    @IBOutlet weak var checkOutL: UILabel!
+    @IBOutlet weak var priceL: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func doneBtn(_ sender: Any) {
         performSegue(withIdentifier: "finishedAcc", sender: nil)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
